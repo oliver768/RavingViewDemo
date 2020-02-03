@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingView" customModule="BubbleAnimation" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelBtnOutlet" destination="7ye-xL-5HA" id="kox-sE-sFk"/>
+                <outlet property="dontShowBtnHgtCons" destination="gWR-WE-dpg" id="SgP-OZ-RRi"/>
+                <outlet property="floatingView" destination="XAt-73-Sjr" id="KNV-pN-cpf"/>
+                <outlet property="headerMsgLbl" destination="8rq-6B-f5m" id="7qw-uS-ODi"/>
+                <outlet property="showAgainBtnOutlet" destination="Bab-lR-6Vf" id="PfF-8v-tg0"/>
+                <outlet property="submitBtnOutlet" destination="zFX-3d-AWU" id="T76-ne-s8n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y93-fp-VSM">
+                    <rect key="frame" x="20" y="288" width="374" height="320"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you like this recipe? Rate it now" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rq-6B-f5m">
+                            <rect key="frame" x="60" y="35" width="254" height="53"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAt-73-Sjr" customClass="FloatRatingView" customModule="BubbleAnimation" customModuleProvider="target">
+                            <rect key="frame" x="87" y="103" width="200" height="35"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="BDg-wu-Rqa"/>
+                                <constraint firstAttribute="width" constant="200" id="JOy-me-MkQ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="icons8-fill_star-20 "/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="icons8-star-20"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFX-3d-AWU">
+                            <rect key="frame" x="30" y="188" width="314" height="60"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.40392156862745099" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="by6-Tr-piP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                            <state key="normal" title="Submit">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="submitBtnAction:" destination="-1" eventType="touchUpInside" id="4NO-N8-rWE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-lR-6Vf">
+                            <rect key="frame" x="54.5" y="148" width="265" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="gWR-WE-dpg"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Don't show this message again   ">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="showAgainBtnAction:" destination="-1" eventType="touchUpInside" id="fQd-mJ-2uD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ye-xL-5HA">
+                            <rect key="frame" x="155" y="268" width="64" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="pxs-oh-Lir"/>
+                            </constraints>
+                            <size key="titleShadowOffset" width="2" height="3"/>
+                            <state key="normal">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Cancel">
+                                        <attributes>
+                                            <color key="NSColor" red="0.31369495390000002" green="0.31374502180000002" blue="0.31368404630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="21"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="regular"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelBtnAction:" destination="-1" eventType="touchUpInside" id="PiN-Wm-c7I"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="Bab-lR-6Vf" firstAttribute="centerX" secondItem="y93-fp-VSM" secondAttribute="centerX" id="1Xw-SA-dKi"/>
+                        <constraint firstItem="8rq-6B-f5m" firstAttribute="leading" secondItem="y93-fp-VSM" secondAttribute="leading" constant="60" id="3BY-dS-AWb"/>
+                        <constraint firstItem="Bab-lR-6Vf" firstAttribute="top" secondItem="XAt-73-Sjr" secondAttribute="bottom" constant="10" id="Ll1-Nq-mAw"/>
+                        <constraint firstItem="7ye-xL-5HA" firstAttribute="centerX" secondItem="y93-fp-VSM" secondAttribute="centerX" id="Qid-DE-bM1"/>
+                        <constraint firstItem="7ye-xL-5HA" firstAttribute="top" secondItem="zFX-3d-AWU" secondAttribute="bottom" constant="20" id="Qu7-ES-7z7"/>
+                        <constraint firstItem="zFX-3d-AWU" firstAttribute="top" secondItem="Bab-lR-6Vf" secondAttribute="bottom" constant="10" id="TKX-lR-XCy"/>
+                        <constraint firstAttribute="trailing" secondItem="8rq-6B-f5m" secondAttribute="trailing" constant="60" id="Uke-LV-xJT"/>
+                        <constraint firstItem="XAt-73-Sjr" firstAttribute="centerX" secondItem="y93-fp-VSM" secondAttribute="centerX" id="YG6-GT-Ixp"/>
+                        <constraint firstItem="XAt-73-Sjr" firstAttribute="top" secondItem="8rq-6B-f5m" secondAttribute="bottom" constant="15" id="Ymb-zV-rTn"/>
+                        <constraint firstItem="zFX-3d-AWU" firstAttribute="leading" secondItem="y93-fp-VSM" secondAttribute="leading" constant="30" id="gkB-ht-iOP"/>
+                        <constraint firstItem="8rq-6B-f5m" firstAttribute="top" secondItem="y93-fp-VSM" secondAttribute="top" constant="35" id="jbk-qB-Dwn"/>
+                        <constraint firstAttribute="trailing" secondItem="zFX-3d-AWU" secondAttribute="trailing" constant="30" id="rjp-0b-DQU"/>
+                        <constraint firstAttribute="height" constant="320" id="zgl-zy-YqT"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.38883692781690143" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="y93-fp-VSM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="U9u-zt-gAI"/>
+                <constraint firstItem="y93-fp-VSM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VIg-6R-mF3"/>
+                <constraint firstItem="y93-fp-VSM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fvw-lE-A5i"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y93-fp-VSM" secondAttribute="trailing" constant="20" id="tAA-5Y-XZX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-174" y="-22"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icons8-fill_star-20 " width="20" height="20"/>
+        <image name="icons8-star-20" width="20" height="20"/>
+    </resources>
+</document>

@@ -1,0 +1,17 @@
+// Step to use Rating pop up
+    1. First you need to drag the folder in your project.
+    2. You just need to call showRatingView method on desired View Controller because it's method of View Controller it will accessable anywhere in any controller. In return you will get RatingModel in which you access the rating from `ratingVal` variable and from `isShowAgain` Variable you can get flag value to "Don't show this message again"
+
+Mandatory parameters
+    1. Empty Image
+    2. Full Image
+    3. Submit Button Color
+    4. Submit Button closure block(Submit Button Action)
+    5. Floating Type(Whole/Half/Fraction)
+   
+Optional Parameters
+    1. Header Message
+    2. Don't Show it again Message
+    
+
+
